@@ -1908,8 +1908,13 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../components/WorkInProgress'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'App'
+  name: 'App',
+  components: {
+    WorkinProgress: WorkinProgress
+  }
 });
 
 /***/ }),
@@ -1929,15 +1934,10 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_c("h2", [_vm._v("QUesta è la mia app di vue")]), _vm._v(" "), _c("WorkInProgress")], 1);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("h2", [_vm._v("QUesta è la mia app di vue")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
