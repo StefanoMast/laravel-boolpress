@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h2>QUesta è la mia app di vue</h2>
-    <WorkInProgress/>
+    <div class="container text-center mt-4">
+      <h2>Questa è la mia app di vue</h2>
+      <WorkInProgress/>
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ import WorkInProgress from '../components/WorkInProgress'
 export default {
     name: 'App',
     components: {
-      WorkinProgress
+      WorkInProgress
     }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Work in Progress</h2>
+    <h4>Work in Progress</h4>
   </div>
 </template>
 
