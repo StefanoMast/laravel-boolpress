@@ -14,10 +14,12 @@ class PostsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $post = new Post();
-        $post->title= $faker->sentence();
-        $post->content = $faker->paragraph(rand(10, 30), false);
-        $post->slug= Str::slug($post->title, '-');
-        $post->save();
+        for ($$i = 0; $i <10; $i++) {
+            $post = new Post();
+            $post->title= $faker->sentence();
+            $post->content = $faker->paragraph(rand(10, 30), false);
+            $post->slug= Str::slug($post->title, '-');
+            $post->save();
+        } 
     }
 }
