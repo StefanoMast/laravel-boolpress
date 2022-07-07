@@ -19,11 +19,11 @@
         @csrf
         <div class="form-group">
             <label for="title">Titolo</label>
-            <input type="email" class="form-control" name="title" id="title">
+            <input type="email" class="form-control" name="title" id="title" value={{ old('title')}}>
         </div>
         <div class="form-group">
             <label for="content">Titolo</label>
-            <textarea type="text" class="form-control" name="content" id="content"></textarea>
+            <textarea type="text" class="form-control" name="content" id="content"> {{ old('content')}}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
