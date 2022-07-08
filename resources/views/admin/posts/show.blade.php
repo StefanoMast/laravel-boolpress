@@ -12,5 +12,15 @@
         @endforelse
     </p>
     <p>{{ $post->content}}</p>
-    <a class="btn btn-primary" href="{{route('admin.posts.edit', ['post'=> $post->id])}}"></a>
+
+    <div class="d-flex">
+        <a class="btn btn-primary" href="{{route('admin.posts.edit', ['post'=> $post->id])}}"></a>
+
+        <form action="{{ route('admin.posts.destroy', ['post' =>$post->id]}}"" method="post">
+        @csrf
+        @method('DELETE')
+            <button class="btn btn-danger" type="submit">Cancella</button>
+        </form>
+    </div>
+    
 @endsection
