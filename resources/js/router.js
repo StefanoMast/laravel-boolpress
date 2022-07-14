@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 import Home from "./pages/Home.vue";
 import About from "./pages/About.vue";
 import Blog from "./pages/Blog.vue";
+import NotFound from "./pages/NotFound.vue";
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -23,6 +24,10 @@ const router = new VueRouter({
             path: "/blog",
             name: "blog",
             component: Blog
+        },
+        {
+            path: "/*",
+            component: NotFound
         }
     ]
 });
