@@ -5,22 +5,7 @@
     <div class="row rpw-cols-3">
         <!-- single post -->
         <div v-for="post in posts" :key="post.id" class="col">
-            <div class="card mb-3" style="width: 18rem;">
-                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                <div class="card-body">
-                    <h5 class="card-title">{{ post.title}}</h5>
-                    <p class="card-text">{{troncateText(post.content, 50)}}</p>
-                </div>
-                <!-- <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div> -->
-            </div>
+            <PostCard :post="post"/>
         </div>
         <!-- single post -->
         <nav aria-label="...">
@@ -53,9 +38,13 @@
 
 <script>
 import Axios from 'axios';
+import PostCard from "../components/PostCard.vue";
 
 export default {
     name: 'Posts',
+    components: {
+        PostCard
+    },
     data() {
         return {
             posts: [],
@@ -79,15 +68,8 @@ export default {
                 this.lastPage = resp.data.results.last_page;
                 this.totalPosts = resp.data.results.total;
             });
-        },
-        troncateText(text, maxCharNumber) {
-            // se il testo è più lungo di maxharnumber taglia il testo e aggiungi ...
-            // altrimenti ritorna testo intero
-            if (text.length > maxCharNumber) {
-                return text.substr(0, maxCharNumber) + '...'
-            }
-            return text;
         }
+        
     }
 }
 </script>
