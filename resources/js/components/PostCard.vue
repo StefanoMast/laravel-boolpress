@@ -10,11 +10,10 @@
                     <li class="list-group-item">Cras justo odio</li>
                     <li class="list-group-item">Dapibus ac facilisis in</li>
                     <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+                </ul>-->
                 <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div> -->
+                    <router-link :to="{name: 'single-post', params: {slug: 'post.slug'}}" class="card-link">Leggi post</router-link>
+                </div>
             </div>
 </template>
 
