@@ -2536,11 +2536,19 @@ var render = function render() {
   }, [_vm.post ? _c("section", [_c("h2", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", [_vm._v("Category: " + _vm._s(_vm.categoryName))]), _vm._v(" "), _c("div", {
     staticClass: "mb-4"
   }, _vm._l(_vm.post.tags, function (tag) {
-    return _c("span", {
+    return _c("router-link", {
       key: tag.id,
-      staticClass: "badge rounded-pill bg-warning text-dark mr-3"
+      staticClass: "badge rounded-pill bg-warning text-dark mr-3",
+      attrs: {
+        to: {
+          name: "single-tag",
+          params: {
+            slug: tag.slug
+          }
+        }
+      }
     }, [_vm._v(_vm._s(tag.name))]);
-  }), 0), _vm._v(" "), _c("p", [_vm._v(" " + _vm._s(_vm.post.content))])]) : _c("section", [_c("h2", [_vm._v("Loading...")])])]);
+  }), 1), _vm._v(" "), _c("p", [_vm._v(" " + _vm._s(_vm.post.content))])]) : _c("section", [_c("h2", [_vm._v("Loading...")])])]);
 };
 
 var staticRenderFns = [];
@@ -53832,10 +53840,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_About_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/About.vue */ "./resources/js/pages/About.vue");
 /* harmony import */ var _pages_Blog_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Blog.vue */ "./resources/js/pages/Blog.vue");
 /* harmony import */ var _pages_SinglePost_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/SinglePost.vue */ "./resources/js/pages/SinglePost.vue");
-/* harmony import */ var _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/NotFound.vue */ "./resources/js/pages/NotFound.vue");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '.pages/SingleTag.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/NotFound.vue */ "./resources/js/pages/NotFound.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
 
 
@@ -53860,9 +53870,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "single-post",
     component: _pages_SinglePost_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
+    path: "/tags/:slug",
+    name: "single-tag",
+    component: !(function webpackMissingModule() { var e = new Error("Cannot find module '.pages/SingleTag.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  }, {
     path: "/*",
     name: "not-found",
-    component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
